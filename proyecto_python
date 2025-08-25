@@ -1,0 +1,25 @@
+# Determina la posicion inicial de 20 pilotos de la formula 1 dado sus tiempos de lap. 
+# Yo creo que esto es interesante porque las posiciones iniciales de la formula 1 pueden determinar 
+# los ganadores de las carreras. 
+
+Entradas: 
+n=numdecimal 
+nombre de pilotos
+
+Algoritmo:
+1.- Establecer lista de posiciones del 1-20 
+2.- Solicitar nombre del piloto y tiempo de lap: numdecimal
+    1.1- Almacenar nombre del piloto junto con tiempo de lap
+3.- Solicitar nuevamente nombre del piloto y tiempo de lap:
+    3.1- Almacenar nombre del piloto junto con tiempo de lap
+4.- Repetir hasta llenar lista de pilotos
+5.- Si tiempo de lap del piloto > tiempo de lap del piloto que sigue entonces dar poll position 1
+    5.1 Si No: ponerlo una posicion por debajo del piloto que sigue
+        5.1.1 Volver a comparar tiempo de lap del piloto con el piloto que sigue
+        5.1.2 Repetir hasta que tiempo de lap del piloto sea mayor al piloto que sigue o se acabe la lista
+6.- Mostrar tabla de posiciones del 1-20 pilotos y sus tiempos de lap
+
+Salidas: 
+n=numdecimal 
+nombre de pilotos
+lista 1-20
