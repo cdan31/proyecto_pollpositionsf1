@@ -9,7 +9,7 @@ nombre de pilotos
 Algoritmo:
 1.- Establecer lista de posiciones del 1-20 
 2.- Solicitar nombre del piloto y tiempo de lap: numdecimal
-    1.1- Almacenar nombre del piloto junto con tiempo de lap
+    2.1- Almacenar nombre del piloto junto con tiempo de lap
 3.- Solicitar nuevamente nombre del piloto y tiempo de lap:
     3.1- Almacenar nombre del piloto junto con tiempo de lap
 4.- Repetir hasta llenar lista de pilotos
@@ -22,4 +22,5 @@ Algoritmo:
 Salidas: 
 n=numdecimal 
 nombre de pilotos
+
 lista 1-20
