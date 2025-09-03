@@ -37,7 +37,7 @@
 tiempos = []
 
 # Algoritmo para ordenar tiempos de lap
-for i in range(5):
+for i in range(20):
     lap_time = float(input("Tiempo de lap para el piloto: "))
     tiempos.append(lap_time)
     print (tiempos)
