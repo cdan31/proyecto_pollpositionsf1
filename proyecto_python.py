@@ -39,41 +39,33 @@
 def promedio(tiempo1, tiempo2, tiempo3):
     return (tiempo1 + tiempo2 + tiempo3) / 3
 
-# Tiempo promedio de 3 tiempos de lap
+#Lista de pilotos del 1 al 20
 pilotos = []
-contador = 1
-while contador <= 20:
+for contador in range(1, 21):
     tiempo1 = float(input(f"Tiempo 1 del piloto {contador}: "))
     tiempo2 = float(input(f"Tiempo 2 del piloto {contador}: "))
     tiempo3 = float(input(f"Tiempo 3 del piloto {contador}: "))
     
     prom = promedio(tiempo1, tiempo2, tiempo3)
     pilotos.append(prom)
-    contador += 1
 
 # Primer lugar
 m1 = pilotos[0]
-contador = 1
-while contador < 20:
-    if pilotos[contador] < m1:
-        m1 = pilotos[contador]
-    contador += 1
+for i in range(1, 20):
+    if pilotos[i] < m1:
+        m1 = pilotos[i]
 
 # Segundo lugar
-m2 = 999999
-contador = 0
-while contador < 20:
-    if pilotos[contador] != m1 and pilotos[contador] < m2:
-        m2 = pilotos[contador]
-    contador += 1
+m2 = float(999999)
+for i in range(20):
+    if pilotos[i] != m1 and pilotos[i] < m2:
+        m2 = pilotos[i]
 
 # Tercer lugar
-m3 = 999999
-contador = 0
-while contador < 20:
-    if pilotos[contador] != m1 and pilotos[contador] != m2 and pilotos[contador] < m3:
-        m3 = pilotos[contador]
-    contador += 1
+m3 = float(99999)
+for i in range(20):
+    if pilotos[i] != m1 and pilotos[i] != m2 and pilotos[i] < m3:
+        m3 = pilotos[i]
 
 # Output
 print("1er lugar (promedio más rápido):", m1)
