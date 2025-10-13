@@ -39,35 +39,27 @@
 def promedio(tiempo1, tiempo2, tiempo3):
     return (tiempo1 + tiempo2 + tiempo3) / 3
 
-#Lista de pilotos del 1 al 20
+# Función que retorna el promedio (para ordenar)
+def obtener_promedio(datos_piloto):
+    return datos_piloto[1]
+
+# Lista para guardar los tiempos y promedios de todos los pilotos
 pilotos = []
-for contador in range(1, 21):
-    tiempo1 = float(input(f"Tiempo 1 del piloto {contador}: "))
-    tiempo2 = float(input(f"Tiempo 2 del piloto {contador}: "))
-    tiempo3 = float(input(f"Tiempo 3 del piloto {contador}: "))
-    
-    prom = promedio(tiempo1, tiempo2, tiempo3)
-    pilotos.append(prom)
 
-# Primer lugar
-m1 = pilotos[0]
-for i in range(1, 20):
-    if pilotos[i] < m1:
-        m1 = pilotos[i]
+# Recolectar los tiempos y calcular promedios
+for numero_piloto in range(1, 21):
+    tiempos = []
+    for vuelta in range(1, 4):
+        tiempo = float(input(f"Piloto {numero_piloto} - Tiempo de la vuelta {vuelta}: "))
+        tiempos.append(tiempo)
 
-# Segundo lugar
-m2 = float(999999)
-for i in range(20):
-    if pilotos[i] != m1 and pilotos[i] < m2:
-        m2 = pilotos[i]
+    prom = promedio(tiempos[0], tiempos[1], tiempos[2])
+    pilotos.append([numero_piloto, prom])
 
-# Tercer lugar
-m3 = float(99999)
-for i in range(20):
-    if pilotos[i] != m1 and pilotos[i] != m2 and pilotos[i] < m3:
-        m3 = pilotos[i]
+# Ordenar a los pilotos por tiempo promedio (el menor = más rápido)
+pilotos.sort(key=obtener_promedio)
 
-# Output
-print("1er lugar (promedio más rápido):", m1)
-print("2do lugar:", m2)
-print("3er lugar:", m3)
+# Mostrar el podio (top 3)
+print("1er lugar: Piloto", pilotos[0][0], "con un tiempo promedio de", pilotos[0][1])
+print("2do lugar: Piloto", pilotos[1][0], "con un tiempo promedio de", pilotos[1][1])
+print("3er lugar: Piloto", pilotos[2][0], "con un tiempo promedio de", pilotos[2][1])
